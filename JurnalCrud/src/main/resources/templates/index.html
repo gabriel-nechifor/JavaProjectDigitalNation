@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Compressed CSS -->
+
+
+
+<title>Jurnal Digital Nation</title>
+</head>
+<body>
+
+	<h1>Hello World</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Data</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="jurnal : ${jurnal}">
+				<td th:text="${jurnal.text}"></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+</body>
+</html>
