@@ -1,2 +1,0 @@
-INSERT INTO TBL_JURNAL (date, title, text, goalToday, progressMadeToday, moodToday, currentlyReading, Blob, websiteToday) VALUES
-  ('11.10.2011', 'Gupta', 'abc@gmail.com','Lokesh', 'Gupta', 'abc@gmail.com','Lokesh', 'Gupta', 'abc@gmail.com');
