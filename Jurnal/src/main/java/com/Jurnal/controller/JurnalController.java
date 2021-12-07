@@ -15,48 +15,46 @@ import org.springframework.web.servlet.ModelAndView;
 import com.Jurnal.model.Jurnal;
 import com.Jurnal.service.JurnalService;
 
+
 @Controller
 public class JurnalController {
 
+	@Autowired
+	private JurnalService service;
 
-		@Autowired
-	    private JurnalService service;
-	 
-	    @GetMapping("/")
-	    public String viewHomePage(Model model) {
-	        List<Jurnal> listjurnal = service.listAll();
-	        model.addAttribute("listjurnal", listjurnal);
-	        System.out.print("Get / ");
-	        return "index";
-	    }
-	    
-	    
-	    @GetMapping("/new")
-	    public String add(Model model) {
-	        model.addAttribute("jurnal", new Jurnal());
-	        return "new";
-	    }
-	 
-	    @RequestMapping(value = "/save", method = RequestMethod.POST)
-	    public String saveJurnal(@ModelAttribute("jurnal") Jurnal std) {
-	        service.save(std);
-	        return "redirect:/";
-	    }
-	 
-	    @RequestMapping("/edit/{id}")
-	    public ModelAndView showEditJurnalPage(@PathVariable(name = "id") long id) {
-	        ModelAndView mav = new ModelAndView("new");
-	        Jurnal std = service.get(id);
-	        mav.addObject("jurnal", std);
-	        return mav;
-	        
-	    }
-	    @RequestMapping("/delete/{id}")
-	    public String deletejurnal(@PathVariable(name = "id") long id) {
-	        service.delete(id);
-	        return "redirect:/";
-	    }
+	@GetMapping("/")
+	public String viewHomePage(Model model) {
+		List<Jurnal> listjurnal = service.listAll();
+		model.addAttribute("listjurnal", listjurnal);
+		System.out.print("Get / ");
+		return "index";
+	}
+
+	@GetMapping("/new")
+	public String add(Model model) {
+		model.addAttribute("jurnal", new Jurnal());
+		return "new";
+	}
+
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public String saveJurnal(@ModelAttribute("jurnal") Jurnal std) {
+		service.save(std);
+		return "redirect:/";
+	}
+
+	@RequestMapping("/edit/{id}")
+	public ModelAndView showEditJurnalPage(@PathVariable(name = "id") long id) {
+		ModelAndView mav = new ModelAndView("new");
+		Jurnal std = service.get(id);
+		mav.addObject("jurnal", std);
+		return mav;
+
+	}
+
+	@RequestMapping("/delete/{id}")
+	public String deletejurnal(@PathVariable(name = "id") long id) {
+		service.delete(id);
+		return "redirect:/";
+	}
+
 }
-
-
-
