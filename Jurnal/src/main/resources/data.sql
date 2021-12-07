@@ -1,1 +1,1 @@
-INSERT INTO jurnal (date, title) VALUES ('11.10.2011', 'Gupta');
+INSERT INTO JURNAL (date, title) VALUES ('11.10.2011', 'Gupta');

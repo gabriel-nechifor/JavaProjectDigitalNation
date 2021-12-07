@@ -12,20 +12,19 @@ public class Jurnal {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 
 		private Long id;
-		private String date;
+		private String data;
 		private String title;
 		
 		
 		public Jurnal() {
 			super();
-			// TODO Auto-generated constructor stub
 		}
 
 
-		public Jurnal(Long id, String date, String title) {
+		public Jurnal(Long id, String data, String title) {
 			super();
 			this.id = id;
-			this.date = date;
+			this.data = data;
 			this.title = title;
 		}
 
@@ -40,13 +39,13 @@ public class Jurnal {
 		}
 
 
-		public String getDate() {
-			return date;
+		public String getData() {
+			return data;
 		}
 
 
-		public void setDate(String date) {
-			this.date = date;
+		public void setData(String data) {
+			this.data = data;
 		}
 
 
