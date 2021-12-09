@@ -36,7 +36,11 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<h1 class="text-center p-5">Ce faci? Cum ești? Ce e nou?</h1>
+		    <h1  class="text-center p-5" th:inline="text">Hello, <span th:text="${#authentication.name}"></span>!</h1>
+</div>
+			<h2 class="text-center p-2">Ce faci? Cum ești? Ce e nou?</h2>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+
 
 
 			<form action="#" th:action="@{/save}" th:object="${jurnal}"

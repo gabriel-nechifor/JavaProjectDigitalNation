@@ -35,7 +35,12 @@
 	<div class="container">
 	<h1 class="h1 text-center p-3">
 Jurnal 2021</h1></div>
-  <div class="container">
+	<div th:if="${#authorization.expression('isAuthenticated()')}">
+		<h1 class="text-center" th:inline="text">
+			Hello, <span th:text="${#authentication.name}"></span>!
+		</h1>
+	</div>
+	<div class="container">
   <div class="row">
 			<div th:each="jurnal : ${listjurnal}"
 				class="card col-sm-3 m-3 shadow-lg p-3 bg-body rounded"
