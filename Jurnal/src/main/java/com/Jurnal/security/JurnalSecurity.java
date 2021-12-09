@@ -1,10 +1,12 @@
 package com.Jurnal.security;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 
 @Configuration
 
@@ -18,16 +20,19 @@ public class JurnalSecurity extends WebSecurityConfigurerAdapter {
                 .loginPage("/login.html")
                 .defaultSuccessUrl("/new", true)
                 .failureUrl("/login-error.html")
+                .permitAll()
             .and()
                 .logout()
                 .logoutSuccessUrl("/index.html")
-                .deleteCookies("JSESSIONID")
             .and()
                 .authorizeRequests()
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/admin/**").authenticated()
+                .anyRequest().permitAll()
             .and()
                 .exceptionHandling()
-                .accessDeniedPage("/403.html");
+                .accessDeniedPage("/403.html")
+		      .and()
+		      .rememberMe();
 
     }
 
@@ -39,5 +44,10 @@ public class JurnalSecurity extends WebSecurityConfigurerAdapter {
                 .withUser("gabriel").password("{noop}digitalnation").roles("ADMIN").and();
     }
     
+
+        @Bean
+        public SpringSecurityDialect springSecurityDialect(){
+            return new SpringSecurityDialect();
+        }
     
 }

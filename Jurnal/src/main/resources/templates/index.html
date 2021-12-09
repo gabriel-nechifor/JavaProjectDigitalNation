@@ -26,7 +26,9 @@
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="/">Home</a></li>
 						<li class="nav-item"><a class="nav-link" aria-current="page"
-							th:href="@{'/login.html'}">Add new thought</a></li>
+							th:href="@{'/login.html'}">Login</a></li>
+						<li class="nav-item" sec:authorize="isAuthenticated()"><a class="nav-link" aria-current="page"
+							th:href="@{'/new'}">Write</a></li>
 					</ul>
 				</div>
 			</div>
