@@ -1,9 +1,12 @@
 package com.Jurnal.model;
 
+import java.sql.Blob;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Jurnal {
@@ -17,6 +20,8 @@ public class Jurnal {
 		private String goalToday;
 		private String moodToday;
 		private String currentlyReading;
+		 @Lob
+		  private Blob bookImage;
 		
 
 		public Jurnal() {
@@ -25,7 +30,11 @@ public class Jurnal {
 
 
 
-		public Jurnal(Long id, String data, String title, String goalToday, String moodToday, String currentlyReading) {
+		
+
+
+		public Jurnal(Long id, String data, String title, String goalToday, String moodToday, String currentlyReading,
+				Blob bookImage) {
 			super();
 			this.id = id;
 			this.data = data;
@@ -33,7 +42,12 @@ public class Jurnal {
 			this.goalToday = goalToday;
 			this.moodToday = moodToday;
 			this.currentlyReading = currentlyReading;
+			this.bookImage = bookImage;
 		}
+
+
+
+
 
 
 		public Long getId() {
@@ -41,9 +55,17 @@ public class Jurnal {
 		}
 
 
+
+
+
+
 		public void setId(Long id) {
 			this.id = id;
 		}
+
+
+
+
 
 
 		public String getData() {
@@ -51,9 +73,17 @@ public class Jurnal {
 		}
 
 
+
+
+
+
 		public void setData(String data) {
 			this.data = data;
 		}
+
+
+
+
 
 
 		public String getTitle() {
@@ -61,9 +91,17 @@ public class Jurnal {
 		}
 
 
+
+
+
+
 		public void setTitle(String title) {
 			this.title = title;
 		}
+
+
+
+
 
 
 		public String getGoalToday() {
@@ -71,9 +109,17 @@ public class Jurnal {
 		}
 
 
+
+
+
+
 		public void setGoalToday(String goalToday) {
 			this.goalToday = goalToday;
 		}
+
+
+
+
 
 
 		public String getMoodToday() {
@@ -81,9 +127,17 @@ public class Jurnal {
 		}
 
 
+
+
+
+
 		public void setMoodToday(String moodToday) {
 			this.moodToday = moodToday;
 		}
+
+
+
+
 
 
 		public String getCurrentlyReading() {
@@ -91,29 +145,52 @@ public class Jurnal {
 		}
 
 
+
+
+
+
 		public void setCurrentlyReading(String currentlyReading) {
 			this.currentlyReading = currentlyReading;
 		}
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+		public Blob getBookImage() {
+			return bookImage;
+		}
+
+
+
+
+
+
+		public void setBookImage(Blob bookImage) {
+			this.bookImage = bookImage;
+		}
+
+
+
+
+
+
+		@Override
+		public String toString() {
+			return "Jurnal [id=" + id + ", data=" + data + ", title=" + title + ", goalToday=" + goalToday
+					+ ", moodToday=" + moodToday + ", currentlyReading=" + currentlyReading + ", bookImage=" + bookImage
+					+ "]";
+		}
+
+
+
+
+
+
+
+
+				
 		
 		
 		
