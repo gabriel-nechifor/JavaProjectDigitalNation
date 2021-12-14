@@ -13,41 +13,30 @@ import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 @EnableWebSecurity
 public class JurnalSecurity extends WebSecurityConfigurerAdapter {
 
-    @Override
-    protected void configure(final HttpSecurity http) throws Exception {
-        http
-                .formLogin()
-                .loginPage("/login.html")
-                .defaultSuccessUrl("/new", true)
-                .failureUrl("/login-error.html")
-                .permitAll()
-            .and()
-                .logout()
-                .logoutSuccessUrl("/index.html")
-            .and()
-                .authorizeRequests()
-                .antMatchers("/admin/**").authenticated()
-                .anyRequest().permitAll()
-            .and()
-                .exceptionHandling()
-                .accessDeniedPage("/403.html")
-		      .and()
-		      .rememberMe();
+	@Override
+	protected void configure(final HttpSecurity http) throws Exception {
 
-    }
+//		fix for spring security blocks h2 console
+		http.headers().frameOptions().sameOrigin();
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
+		
 
+		http.formLogin().loginPage("/login.html").defaultSuccessUrl("/new", true).failureUrl("/login-error.html")
+				.permitAll().and().logout().logoutSuccessUrl("/index.html").and().authorizeRequests()
+				.antMatchers("/admin/**").authenticated().anyRequest().permitAll().and().exceptionHandling()
+				.accessDeniedPage("/403.html").and().rememberMe();
 
-    @Override
-    protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .withUser("gabriel").password("{noop}digitalnation").roles("ADMIN").and();
-    }
-    
+	}
 
-        @Bean
-        public SpringSecurityDialect springSecurityDialect(){
-            return new SpringSecurityDialect();
-        }
-    
+	@Override
+	protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication().withUser("gabriel").password("{noop}digitalnation").roles("ADMIN").and();
+	}
+
+	@Bean
+	public SpringSecurityDialect springSecurityDialect() {
+		return new SpringSecurityDialect();
+	}
+
 }

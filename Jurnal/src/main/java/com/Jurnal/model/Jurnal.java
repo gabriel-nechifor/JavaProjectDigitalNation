@@ -1,12 +1,10 @@
 package com.Jurnal.model;
 
-import java.sql.Blob;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 
 @Entity
 public class Jurnal {
@@ -20,9 +18,6 @@ public class Jurnal {
 		private String goalToday;
 		private String moodToday;
 		private String currentlyReading;
-		 @Lob
-		  private Blob bookImage;
-		
 
 		public Jurnal() {
 			super();
@@ -33,8 +28,7 @@ public class Jurnal {
 		
 
 
-		public Jurnal(Long id, String data, String title, String goalToday, String moodToday, String currentlyReading,
-				Blob bookImage) {
+		public Jurnal(Long id, String data, String title, String goalToday, String moodToday, String currentlyReading) {
 			super();
 			this.id = id;
 			this.data = data;
@@ -42,7 +36,6 @@ public class Jurnal {
 			this.goalToday = goalToday;
 			this.moodToday = moodToday;
 			this.currentlyReading = currentlyReading;
-			this.bookImage = bookImage;
 		}
 
 
@@ -53,9 +46,6 @@ public class Jurnal {
 		public Long getId() {
 			return id;
 		}
-
-
-
 
 
 
@@ -158,37 +148,11 @@ public class Jurnal {
 
 
 
-		public Blob getBookImage() {
-			return bookImage;
-		}
-
-
-
-
-
-
-		public void setBookImage(Blob bookImage) {
-			this.bookImage = bookImage;
-		}
-
-
-
-
-
-
 		@Override
 		public String toString() {
 			return "Jurnal [id=" + id + ", data=" + data + ", title=" + title + ", goalToday=" + goalToday
-					+ ", moodToday=" + moodToday + ", currentlyReading=" + currentlyReading + ", bookImage=" + bookImage
-					+ "]";
+					+ ", moodToday=" + moodToday + ", currentlyReading=" + currentlyReading + "]";
 		}
-
-
-
-
-
-
-
 
 				
 		

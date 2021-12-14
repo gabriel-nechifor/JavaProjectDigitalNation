@@ -16,7 +16,10 @@
 	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
 			<div class="container">
-				<a>Data de azi: <span th:text="${#dates.format(#dates.createNow(), 'dd-MM-yyyy')}"></span> | </a>
+				<a>Data de azi: <span
+					th:text="${#dates.format(#dates.createNow(), 'dd-MM-yyyy')}"></span>
+					|
+				</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarNav"
 					aria-controls="navbarNav" aria-expanded="false"
@@ -34,10 +37,12 @@
 	</div>
 	<div class="container">
 		<div class="row">
-		    <h1  class="text-center p-5" th:inline="text">Hello, <span th:text="${#authentication.name}"></span>!</h1>
-</div>
-			<h2 class="text-center p-2">Ce faci? Cum ești? Ce e nou?</h2>
-<div th:if="${#authorization.expression('isAuthenticated()')}">
+			<h1 class="text-center p-5" th:inline="text">
+				Hello, <span th:text="${#authentication.name}"></span>!
+			</h1>
+		</div>
+		<h2 class="text-center p-2">Ce faci? Cum ești? Ce e nou?</h2>
+		<div th:if="${#authorization.expression('isAuthenticated()')}">
 
 
 
@@ -61,31 +66,39 @@
 						class="form-control" id="data">
 				</div>
 
-		
-				
-								<div class="mb-3">
+
+
+				<div class="mb-3">
 					<label for="goal" class="form-label">Goal: </label> <input
 						type="text" th:field="*{goalToday}" class="form-control"
 						placeholder="goalToday" id="goalToday">
 				</div>
-				
-								<div class="mb-3">
-					<label for="Mood" class="form-label">Mood: </label> <input
-						type="text" th:field="*{moodToday}" class="form-control"
-						placeholder="moodToday" id="moodToday">
+
+				<div class="mb-3">
+
+					<label for="Mood" class="form-label">Mood: </label> <select
+						class="form-control" th:field="*{moodToday}">
+						<option th:value="'Happy'" th:text="Happy"></option>
+						<option th:value="'Balanced'" th:text="Balanced"></option>
+						<option th:value="'Sad'" th:text="Sad"></option>
+					</select>
 				</div>
-								
-								<div class="mb-3">
+
+
+				<div class="mb-3">
 					<label for="reading" class="form-label">Reading: </label> <input
 						type="text" th:field="*{currentlyReading}" class="form-control"
 						placeholder="reading" id="reading">
 				</div>
-							
+
+
 
 				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
 
 		</div>
 	</div>
-
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
