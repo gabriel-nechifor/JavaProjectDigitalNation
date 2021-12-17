@@ -15,144 +15,83 @@ public class Jurnal {
 		private Long id;
 		private String data;
 		private String title;
-		private String goalToday;
-		private String moodToday;
-		private String currentlyReading;
+		private String goal;
+		private String mood;
+		private String reading;
 
 		public Jurnal() {
 			super();
 		}
 
-
-
-		
-
-
-		public Jurnal(Long id, String data, String title, String goalToday, String moodToday, String currentlyReading) {
+		public Jurnal(Long id, String data, String title, String goal, String mood, String reading) {
 			super();
 			this.id = id;
 			this.data = data;
 			this.title = title;
-			this.goalToday = goalToday;
-			this.moodToday = moodToday;
-			this.currentlyReading = currentlyReading;
+			this.goal = goal;
+			this.mood = mood;
+			this.reading = reading;
 		}
-
-
-
-
-
 
 		public Long getId() {
 			return id;
 		}
 
-
-
 		public void setId(Long id) {
 			this.id = id;
 		}
-
-
-
-
-
 
 		public String getData() {
 			return data;
 		}
 
-
-
-
-
-
 		public void setData(String data) {
 			this.data = data;
 		}
-
-
-
-
-
 
 		public String getTitle() {
 			return title;
 		}
 
-
-
-
-
-
 		public void setTitle(String title) {
 			this.title = title;
 		}
 
-
-
-
-
-
-		public String getGoalToday() {
-			return goalToday;
+		public String getGoal() {
+			return goal;
 		}
 
-
-
-
-
-
-		public void setGoalToday(String goalToday) {
-			this.goalToday = goalToday;
+		public void setGoal(String goal) {
+			this.goal = goal;
 		}
 
-
-
-
-
-
-		public String getMoodToday() {
-			return moodToday;
+		public String getMood() {
+			return mood;
 		}
 
-
-
-
-
-
-		public void setMoodToday(String moodToday) {
-			this.moodToday = moodToday;
+		public void setMood(String mood) {
+			this.mood = mood;
 		}
 
-
-
-
-
-
-		public String getCurrentlyReading() {
-			return currentlyReading;
+		public String getReading() {
+			return reading;
 		}
 
-
-
-
-
-
-		public void setCurrentlyReading(String currentlyReading) {
-			this.currentlyReading = currentlyReading;
+		public void setReading(String reading) {
+			this.reading = reading;
 		}
-
-
-
-
-
 
 		@Override
 		public String toString() {
-			return "Jurnal [id=" + id + ", data=" + data + ", title=" + title + ", goalToday=" + goalToday
-					+ ", moodToday=" + moodToday + ", currentlyReading=" + currentlyReading + "]";
+			return "Jurnal [id=" + id + ", data=" + data + ", title=" + title + ", goal=" + goal + ", mood=" + mood
+					+ ", reading=" + reading + "]";
 		}
+		
+		
+
+
+
+		
 
 				
 		

@@ -70,14 +70,14 @@
 
 				<div class="mb-3">
 					<label for="goal" class="form-label">Goal: </label> <input
-						type="text" th:field="*{goalToday}" class="form-control"
+						type="text" th:field="*{goal}" class="form-control"
 						placeholder="goalToday" id="goalToday">
 				</div>
 
 				<div class="mb-3">
 
 					<label for="Mood" class="form-label">Mood: </label> <select
-						class="form-control" th:field="*{moodToday}">
+						class="form-control" th:field="*{mood}">
 						<option th:value="'Happy'" th:text="Happy"></option>
 						<option th:value="'Balanced'" th:text="Balanced"></option>
 						<option th:value="'Sad'" th:text="Sad"></option>
@@ -87,7 +87,7 @@
 
 				<div class="mb-3">
 					<label for="reading" class="form-label">Reading: </label> <input
-						type="text" th:field="*{currentlyReading}" class="form-control"
+						type="text" th:field="*{reading}" class="form-control"
 						placeholder="reading" id="reading">
 				</div>
 
