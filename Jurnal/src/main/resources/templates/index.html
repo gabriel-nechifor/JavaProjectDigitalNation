@@ -54,7 +54,7 @@ Jurnal 2021</h1></div>
 					<li>Mood: <span th:text="${jurnal.moodToday}"></span></li>
 					<li>Reading: <span th:text="${jurnal.currentlyReading}"></span></li>
 				</ul>
-				<div class="card-body">
+				<div class="card-body" sec:authorize="isAuthenticated()">
 					<a th:href="@{'/edit/' + ${jurnal.id}}" class="card-link">edit</a>
 					<a th:href="@{'/delete/' + ${jurnal.id}}" class="card-link">delete</a>
 				</div>
