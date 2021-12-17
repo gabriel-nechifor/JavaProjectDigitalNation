@@ -23,7 +23,7 @@ public class JurnalSecurity extends WebSecurityConfigurerAdapter {
 		
 
 		http.formLogin().loginPage("/login.html").defaultSuccessUrl("/new", true).failureUrl("/login-error.html")
-				.permitAll().and().logout().logoutSuccessUrl("/index.html").and().authorizeRequests()
+				.permitAll().and().logout().logoutSuccessUrl("/").and().authorizeRequests()
 				.antMatchers("/admin/**").authenticated().anyRequest().permitAll().and().exceptionHandling()
 				.accessDeniedPage("/403.html").and().rememberMe();
 
