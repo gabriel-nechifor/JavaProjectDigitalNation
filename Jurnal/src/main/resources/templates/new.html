@@ -76,13 +76,15 @@
 
 				<div class="mb-3">
 
-					<label for="Mood" class="form-label">Mood: </label> <select
-						class="form-control" th:field="*{mood}">
-						<option th:value="'Happy'" th:text="Happy"></option>
-						<option th:value="'Balanced'" th:text="Balanced"></option>
-						<option th:value="'Sad'" th:text="Sad"></option>
-					</select>
+					<label for="Mood" class="form-label">Mood: </label>
+					<input type="text" class="form-control" list="jurnal" id="Mood" th:field="*{mood}"/>
+					<datalist id="jurnal" th:field="*{mood}">
+						<option th:value="'Happy'" th:text="Happy">
+						<option th:value="'Balanced'" th:text="Balanced">
+						<option th:value="'Sad'" th:text="Sad">
+					</datalist>
 				</div>
+				
 
 
 				<div class="mb-3">
