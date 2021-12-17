@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Jurnal {
 	
@@ -13,7 +14,8 @@ public class Jurnal {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 
 		private Long id;
-		private String data;
+		private String ziua;
+		private String thought;
 		private String title;
 		private String goal;
 		private String mood;
@@ -23,10 +25,11 @@ public class Jurnal {
 			super();
 		}
 
-		public Jurnal(Long id, String data, String title, String goal, String mood, String reading) {
+		public Jurnal(Long id, String ziua, String thought, String title, String goal, String mood, String reading) {
 			super();
 			this.id = id;
-			this.data = data;
+			this.ziua = ziua;
+			this.thought = thought;
 			this.title = title;
 			this.goal = goal;
 			this.mood = mood;
@@ -41,12 +44,20 @@ public class Jurnal {
 			this.id = id;
 		}
 
-		public String getData() {
-			return data;
+		public String getZiua() {
+			return ziua;
 		}
 
-		public void setData(String data) {
-			this.data = data;
+		public void setZiua(String ziua) {
+			this.ziua = ziua;
+		}
+
+		public String getThought() {
+			return thought;
+		}
+
+		public void setThought(String thought) {
+			this.thought = thought;
 		}
 
 		public String getTitle() {
@@ -83,9 +94,15 @@ public class Jurnal {
 
 		@Override
 		public String toString() {
-			return "Jurnal [id=" + id + ", data=" + data + ", title=" + title + ", goal=" + goal + ", mood=" + mood
-					+ ", reading=" + reading + "]";
+			return "Jurnal [id=" + id + ", ziua=" + ziua + ", thought=" + thought + ", title=" + title + ", goal="
+					+ goal + ", mood=" + mood + ", reading=" + reading + "]";
 		}
+
+		
+
+		
+
+		
 		
 		
 

@@ -47,11 +47,12 @@ Jurnal 2021</h1></div>
 	<div class="container">
   <div class="row">
 			<div th:each="jurnal : ${listjurnal}"
-				class="card col-sm-3 m-3 shadow-lg p-3 bg-body rounded"
+				class="card col-sm m-3 shadow-lg p-3 bg-body rounded"
 				style="min-width: 18rem;">
 				<div class="card-body"><h3 class="card-title text-center"><span th:text="${jurnal.title}"></span></h3></div>
 				<ul>
-					<li>Text: <span th:text="${jurnal.data}" ></span></li>
+				<li>Ziua: <span th:text="${jurnal.ziua}"></span></li>
+					<li>Thoughts: <span th:text="${jurnal.thought}" ></span></li>
 					<li>Goal: <span th:text="${jurnal.goal}"></span></li>
 					<li>Mood: <span th:text="${jurnal.mood}"></span></li>
 					<li>Reading: <span th:text="${jurnal.reading}"></span></li>
