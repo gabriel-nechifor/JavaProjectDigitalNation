@@ -62,8 +62,8 @@ public class JurnalController {
 		service.delete(id);
 		return "redirect:/";
 	}
-
-   
+	
+ 
     /** Login form. */
     @RequestMapping("/login.html")
     public String login() {
