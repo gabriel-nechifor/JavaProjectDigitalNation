@@ -51,64 +51,65 @@
 			th:if="${#authorization.expression('isAuthenticated()')}">
 
 
-	  <div class="form-group row">
-			<form action="#" th:action="@{/save}" th:object="${jurnal}"
-				method="post">
-				<div class="mb-3">
-					<input type="hidden" th:field="*{id}" class="form-control"
-						aria-describedby="id">
-				</div>
+			<div class="form-group row">
+				<form action="#" th:action="@{/save}" th:object="${jurnal}"
+					method="post">
+					<div class="mb-3">
+						<input type="hidden" th:field="*{id}" class="form-control"
+							aria-describedby="id">
+					</div>
 
-				<div class="mb-3">
-					<label for="titlu" class="form-label">Titlu: </label> <input
-						type="text" th:field="*{title}" class="form-control"
-						placeholder="titlu" id="titlu">
-				</div>
+					<div class="mb-3">
+						<label for="titlu" class="form-label">Titlu: </label> <input
+							type="text" th:field="*{title}" class="form-control"
+							placeholder="titlu" id="titlu">
+					</div>
 
-				<div class="mb-3 ">
-					<label for="ziua" class="form-label">Ziua: </label> <input
-						type="datetime-local" class="form-control" id="ziua" autocomplete="off"
-						th:field="*{ziua}">
-					<div class="input-group-append"></div>
-				</div>
+					<div class="mb-3 ">
+						<label for="ziua" class="form-label">Ziua: </label> <input
+							type="datetime-local" class="form-control" id="ziua"
+							autocomplete="off" th:field="*{ziua}">
+						<div class="input-group-append"></div>
+					</div>
 
-				<div class="mb-3">
-					<label for="thought" class="form-label">Text: </label> <input
-						type="text" th:field="*{thought}" placeholder="thoughts"
-						class="form-control" id="thought">
-				</div>
+					<div class="mb-3">
+						<label for="thought" class="form-label">Text: </label> <input
+							type="text" th:field="*{thought}" placeholder="thoughts"
+							class="form-control" id="thought">
+					</div>
 
-				<div class="mb-3">
-					<label for="goal" class="form-label">Goal: </label> <input
-						type="text" th:field="*{goal}" class="form-control"
-						placeholder="goal for today" id="goalToday">
-				</div>
+					<div class="mb-3">
+						<label for="goal" class="form-label">Goal: </label> <input
+							type="text" th:field="*{goal}" class="form-control"
+							placeholder="goal for today" id="goalToday">
+					</div>
 
-				<div class="mb-3">
+					<div class="mb-3">
 
-					<label for="Mood" class="form-label">Mood: </label> <input
-						type="text" class="form-control" list="jurnal" id="Mood"
-						placeholder="mood" th:field="*{mood}" />
-					<datalist id="jurnal" th:field="*{mood}">
-						<option th:value="'Happy'" th:text="Happy">
-						<option th:value="'Balanced'" th:text="Balanced">
-						<option th:value="'Sad'" th:text="Sad">
-					</datalist>
-				</div>
+						<label for="Mood" class="form-label">Mood: </label> <input
+							type="text" class="form-control" list="jurnal" id="Mood"
+							placeholder="mood" th:field="*{mood}" />
+						<datalist id="jurnal" th:field="*{mood}">
+							<option th:value="'Happy'" th:text="Happy">
+							<option th:value="'Balanced'" th:text="Balanced">
+							<option th:value="'Sad'" th:text="Sad">
+						</datalist>
+					</div>
 
-				<div class="mb-3">
-					<label for="reading" class="form-label">Reading: </label> <input
-						type="text" th:field="*{reading}" class="form-control"
-						placeholder="what are you reading" id="reading">
-				</div>
+					<div class="mb-3">
+						<label for="reading" class="form-label">Reading: </label> <input
+							type="text" th:field="*{reading}" class="form-control"
+							placeholder="what are you reading" id="reading">
+					</div>
 
 
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
 			</div>
 
 		</div>
 	</div>
+	<div class="footer container p-5"></div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

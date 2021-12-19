@@ -20,12 +20,11 @@ public class JurnalSecurity extends WebSecurityConfigurerAdapter {
 		http.headers().frameOptions().sameOrigin();
 		http.csrf().disable();
 		http.headers().frameOptions().disable();
-		
 
 		http.formLogin().loginPage("/login.html").defaultSuccessUrl("/new", true).failureUrl("/login-error.html")
-				.permitAll().and().logout().logoutSuccessUrl("/").and().authorizeRequests()
-				.antMatchers("/admin/**").authenticated().anyRequest().permitAll().and().exceptionHandling()
-				.accessDeniedPage("/403.html").and().rememberMe();
+				.permitAll().and().logout().logoutSuccessUrl("/").and().authorizeRequests().antMatchers("/admin/**")
+				.authenticated().anyRequest().permitAll().and().exceptionHandling().accessDeniedPage("/403.html").and()
+				.rememberMe();
 
 	}
 

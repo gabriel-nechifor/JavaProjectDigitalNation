@@ -17,17 +17,16 @@ public class JurnalService {
 		return repo.findAll();
 	}
 
- 
-    public void save(Jurnal std) {
-        repo.save(std);
-    }
-    
-    public Jurnal get(long id) {
-        return repo.findById(id).get();
-    }
-    
-    public void delete(long id) {
-        repo.deleteById(id);
-    }
+	public void save(Jurnal std) {
+		repo.save(std);
+	}
+
+	public Jurnal get(long id) {
+		return repo.findById(id).get();
+	}
+
+	public void delete(long id) {
+		repo.deleteById(id);
+	}
 
 }

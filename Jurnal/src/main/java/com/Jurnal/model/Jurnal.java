@@ -1,122 +1,99 @@
 package com.Jurnal.model;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
 public class Jurnal {
-	
-	@Id	
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
 
-		private Long id;
-		private String ziua;
-		private String thought;
-		private String title;
-		private String goal;
-		private String mood;
-		private String reading;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-		public Jurnal() {
-			super();
-		}
+	private Long id;
+	private String ziua;
+	private String thought;
+	private String title;
+	private String goal;
+	private String mood;
+	private String reading;
 
-		public Jurnal(Long id, String ziua, String thought, String title, String goal, String mood, String reading) {
-			super();
-			this.id = id;
-			this.ziua = ziua;
-			this.thought = thought;
-			this.title = title;
-			this.goal = goal;
-			this.mood = mood;
-			this.reading = reading;
-		}
+	public Jurnal() {
+		super();
+	}
 
-		public Long getId() {
-			return id;
-		}
+	public Jurnal(Long id, String ziua, String thought, String title, String goal, String mood, String reading) {
+		super();
+		this.id = id;
+		this.ziua = ziua;
+		this.thought = thought;
+		this.title = title;
+		this.goal = goal;
+		this.mood = mood;
+		this.reading = reading;
+	}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+	public Long getId() {
+		return id;
+	}
 
-		public String getZiua() {
-			return ziua;
-		}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-		public void setZiua(String ziua) {
-			this.ziua = ziua;
-		}
+	public String getZiua() {
+		return ziua;
+	}
 
-		public String getThought() {
-			return thought;
-		}
+	public void setZiua(String ziua) {
+		this.ziua = ziua;
+	}
 
-		public void setThought(String thought) {
-			this.thought = thought;
-		}
+	public String getThought() {
+		return thought;
+	}
 
-		public String getTitle() {
-			return title;
-		}
+	public void setThought(String thought) {
+		this.thought = thought;
+	}
 
-		public void setTitle(String title) {
-			this.title = title;
-		}
+	public String getTitle() {
+		return title;
+	}
 
-		public String getGoal() {
-			return goal;
-		}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-		public void setGoal(String goal) {
-			this.goal = goal;
-		}
+	public String getGoal() {
+		return goal;
+	}
 
-		public String getMood() {
-			return mood;
-		}
+	public void setGoal(String goal) {
+		this.goal = goal;
+	}
 
-		public void setMood(String mood) {
-			this.mood = mood;
-		}
+	public String getMood() {
+		return mood;
+	}
 
-		public String getReading() {
-			return reading;
-		}
+	public void setMood(String mood) {
+		this.mood = mood;
+	}
 
-		public void setReading(String reading) {
-			this.reading = reading;
-		}
+	public String getReading() {
+		return reading;
+	}
 
-		@Override
-		public String toString() {
-			return "Jurnal [id=" + id + ", ziua=" + ziua + ", thought=" + thought + ", title=" + title + ", goal="
-					+ goal + ", mood=" + mood + ", reading=" + reading + "]";
-		}
+	public void setReading(String reading) {
+		this.reading = reading;
+	}
 
-		
+	@Override
+	public String toString() {
+		return "Jurnal [id=" + id + ", ziua=" + ziua + ", thought=" + thought + ", title=" + title + ", goal=" + goal
+				+ ", mood=" + mood + ", reading=" + reading + "]";
+	}
 
-		
-
-		
-		
-		
-
-
-
-		
-
-				
-		
-		
-		
-		
-		
-		
-		
-		
 }
